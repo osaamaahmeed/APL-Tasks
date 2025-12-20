@@ -51,3 +51,245 @@ a {
     color: #007bff;
     text-decoration: none;
 }
+
+a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Home Page Styles */
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.header h1 {
+    margin: 0;
+    color: #333;
+}
+
+.logout-btn {
+    padding: 8px 20px;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+    text-decoration: none;
+}
+
+.assignments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.assignment-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+}
+
+.assignment-section h2 {
+    text-align: left;
+    margin-top: 0;
+    color: #007bff;
+    font-size: 1.5em;
+}
+
+.chapters-list {
+    margin-top: 15px;
+}
+
+.chapter-item {
+    margin-bottom: 15px;
+    padding: 0;
+    background: white;
+    border-radius: 3px;
+    border-left: 4px solid #007bff;
+    overflow: hidden;
+}
+
+.chapter-item h3 {
+    margin: 0;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.chapter-header {
+    padding: 15px;
+    cursor: pointer;
+    user-select: none;
+    background-color: #f8f9fa;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chapter-header:hover {
+    background-color: #e9ecef;
+}
+
+.chapter-toggle {
+    font-size: 0.8em;
+    color: #007bff;
+    transition: transform 0.3s ease-out;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+}
+
+.chapter-content {
+    padding: 0 15px 15px 15px;
+    margin-top: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.chapter-content.expanded {
+    max-height: 1000px;
+    opacity: 1;
+    padding-top: 0;
+    padding-bottom: 15px;
+}
+
+.files-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.files-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.files-list li:last-child {
+    border-bottom: none;
+}
+
+.files-list a {
+    color: #007bff;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    transition: background-color 0.2s;
+}
+
+.files-list a:hover {
+    background-color: #e7f3ff;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+/* Code Viewer Styles */
+.code-viewer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.code-header h2 {
+    margin: 0;
+    color: #333;
+    text-align: left;
+}
+
+.code-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.back-btn {
+    padding: 8px 20px;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.back-btn:hover {
+    background-color: #5a6268;
+    text-decoration: none;
+}
+
+.code-content, .csv-content {
+    background: #2d2d2d;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.code-content pre, .csv-content pre {
+    margin: 0;
+    font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #f8f8f2;
+    white-space: pre;
+    word-wrap: normal;
+    overflow-x: auto;
+}
+
+.code-content code {
+    font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    color: #f8f8f2;
+}
+
+/* Prism.js overrides for better visibility */
+.code-content pre[class*="language-"] {
+    background: #2d2d2d;
+    padding: 1em;
+    margin: 0;
+    overflow: auto;
+    border-radius: 0.3em;
+}
+
+.csv-content pre {
+    color: #f8f8f2;
+    background: #2d2d2d;
+}
