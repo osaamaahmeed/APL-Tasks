@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - Assignments</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="home-container">
+        <div class="header">
+            <h1>Welcome, {{ first_name }}!</h1>
+            <a href="/logout" class="logout-btn">Logout</a>
+        </div>
+        
+        <div class="assignments-grid">
+            <!-- Book Assignments Section -->
+            <div class="assignment-section">
+                <h2>📚 Book Assignments</h2>
+                <div class="chapters-list">
+                    {% for chapter in book_chapters %}
+                    <div class="chapter-item">
+                        <h3 class="chapter-header" onclick="toggleChapter(this)">
+                            <span class="chapter-toggle">▶</span>
+                            {{ chapter.name }}
+                        </h3>
+                        <ul class="files-list chapter-content">
+                            {% for file in chapter.files %}
+                            <li>
+                                <a href="/view/book/{{ chapter.name }}/{{ file }}">{{ file }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Web Scraping Section -->
+            <div class="assignment-section">
+                <h2>🕷️ Web Scraping</h2>
+                <ul class="files-list">
+                    {% for file in web_scraping_files %}
+                    <li>
+                        <a href="/view/web-scraping/{{ file }}">{{ file }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Section Assignments Section -->
+            <div class="assignment-section">
+                <h2>📝 Section Assignment</h2>
+                <ul class="files-list">
+                    {% for file in sections_files %}
+                    <li>
+                        <a href="/view/sections/{{ file }}">{{ file }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleChapter(header) {
+            const content = header.nextElementSibling;
+            const toggle = header.querySelector('.chapter-toggle');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                toggle.textContent = '▶';
+            } else {
+                content.classList.add('expanded');
+                toggle.textContent = '▼';
+            }
+        }
+    </script>
+</body>
+</html>
+
