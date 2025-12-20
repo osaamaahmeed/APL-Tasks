@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="code-viewer-container">
+        <div class="code-header">
+            <h2>{{ assignment_type }} - {{ title }}</h2>
+            <div class="code-actions">
+                <a href="/home" class="back-btn">← Back to Home</a>
+            </div>
+        </div>
+        <div class="csv-content">
+            <pre>{{ csv_data }}</pre>
+        </div>
+    </div>
+</body>
+</html>
+
